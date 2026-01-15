@@ -1,6 +1,6 @@
 let container = document.getElementById('container')
 
-window.onload = createGrid(50);
+window.onload = createGrid(16);
 
 function createGrid(n){
     for(let row = 0; row<n; row++){
@@ -30,13 +30,28 @@ function reDraw() {
 }
 
 container.addEventListener("mouseover", (e) => {
-    e.target.style.background = "orange";
+    let rgb1 = randomColorNum();
+    let rgb2 = randomColorNum();
+    let rgb3 = randomColorNum();
+    
+    e.target.style.background = rgb(rgb1, rgb2, rgb3);
     let opacity = e.target.style.opacity;
     // If Opacity is true - increase target opacity by opacity + 0.1.
     if(opacity) {
         e.target.style.opacity = Number(opacity) + 0.1;
     } else {
         e.target.style.opacity = 0.1
-    }
-    
+    };
+        
 })
+
+
+function randomColorNum() {
+    const minCeiled = Math.ceil(0);
+    const maxFloored = Math.floor(255);
+    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+};
+
+function rgb(r, g, b){
+    return "rgb("+r+","+g+","+b+")";
+}
