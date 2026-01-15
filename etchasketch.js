@@ -15,7 +15,6 @@ function createGrid(n){
     }
 }
 
-console.log(container);
 
 function reDraw() {
     while (container.hasChildNodes()) {
@@ -32,5 +31,12 @@ function reDraw() {
 
 container.addEventListener("mouseover", (e) => {
     e.target.style.background = "orange";
-    // console.log(e);
+    let opacity = e.target.style.opacity;
+    // If Opacity is true - increase target opacity by opacity + 0.1.
+    if(opacity) {
+        e.target.style.opacity = Number(opacity) + 0.1;
+    } else {
+        e.target.style.opacity = 0.1
+    }
+    
 })
