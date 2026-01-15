@@ -15,6 +15,10 @@ function createGrid(n){
     }
 }
 
+function reDraw() {
+    prompt("hello")
+}
+
 container.addEventListener("mouseover", (e) => {
     e.target.style.background = "orange";
     // console.log(e);
