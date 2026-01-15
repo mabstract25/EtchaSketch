@@ -15,8 +15,19 @@ function createGrid(n){
     }
 }
 
+console.log(container);
+
 function reDraw() {
-    prompt("hello")
+    while (container.hasChildNodes()) {
+        container.removeChild(container.firstChild);
+    }
+    let redrawprompt = prompt("How many squares per side?");
+    if(redrawprompt <= 100) {
+        createGrid(redrawprompt);
+    } else {
+        alert("Value must be a number less than 100");
+    }
+    
 }
 
 container.addEventListener("mouseover", (e) => {
