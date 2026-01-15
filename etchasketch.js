@@ -1,6 +1,6 @@
 let container = document.getElementById('container')
 
-window.onload = createGrid(16);
+window.onload = createGrid(50);
 
 function createGrid(n){
     for(let row = 0; row<n; row++){
@@ -14,3 +14,8 @@ function createGrid(n){
         }
     }
 }
+
+container.addEventListener("mouseover", (e) => {
+    e.target.style.background = "orange";
+    // console.log(e);
+})
